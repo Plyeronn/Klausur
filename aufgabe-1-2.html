@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p {
+        background-color: #bdc3c7;
+      }
+      p.list {
+        border-style: solid;
+        border-color: blue;
+      }
+      /* bith p and span */
+      p,
+      span {
+        font-size: 24px;
+      }
+      /* each p that is child of div */
+      div p {
+        text-transform: uppercase;
+      }
+      /* after p is direct ul */
+      p + ul {
+        font-weight: bold;
+        /* background-color: red; */
+      }
+      /* p with id = second */
+      #second::first-letter {
+        font-size: xx-large;
+        color: red;
+      }
+      div p::before {
+        content: "pseudo";
+      }
+      /* bulletpoints of the list */
+      ul {
+        list-style: none;
+      }
+      li::before {
+        content: "•";
+        color: steelblue;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+      /* p such that p is not child of div */
+      p:not(div p)::first-letter {
+        font-size: xx-large;
+        color: Green;
+      }
+
+      div p:nth-child(2n) {
+        color: green;
+      }
+      /* till 1000 we have these */
+      @media (max-width: 1000px) {
+        html {
+          font-size: xx-large;
+        }
+      }
+      /* after 1000 we have that */
+      @media (min-width: 1000px) {
+          html {
+            background-color: lightblue;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>A div element.</div>
+      <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+
+      <p class="list">The first paragraph.</p>
+      <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+
+      <span class="list">Another list</span>
+      <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+
+      <p id="second">The second paragraph.</p>
+      <em>Some text between ul and p</em>
+      <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+    </div>
+
+    <p>The third paragraph (outside of the div).</p>
+    <ul>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ul>
+  </body>
+</html>
